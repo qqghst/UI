@@ -1,1 +1,1 @@
-![photo] img/hero.png
+![hero.png](hero.png)
