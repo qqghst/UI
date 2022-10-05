@@ -1,0 +1,1 @@
+![photo] img/hero.png
