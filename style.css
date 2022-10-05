@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poiret+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-main{
+    background: url(img/bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.section-main h1{
+    font-size: 80px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.88);
+    /* cursor: pointer; */
+}
+
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    transition: 0.4s ease;
+}
+
+header.sticky{
+    background: rgba(68, 15, 19, 0.64);
+    padding: 16px 100px;
+}
+
+header .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .menu a{
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0px 24px;
+    /* padding: 0 10px; */
+    /* border-radius: 20px; */
+    /* transition: 0.3s ease; */
+}
+
+header .menu a:after{
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s ease;
+}
+
+header .menu a:hover{
+    color: rgba(255, 255, 255, 0.88);
+}
+
+header .menu a:hover:after{
+    width: 100%;
+}
+/* header .menu a:hover{
+    color: black;
+    background: #fff;
+} */
+
+header .btn{
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+}
+
+.logo a{
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-two{
+    min-height: 100vh;
+    background: #030507;
+    padding: 20px 100px;
+}
+
+.section-two .first-text{
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.section-two h2{
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.section-two p{
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 16px;
+    margin: 8px 0;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 960px){
+    header .btn{
+        display: block;
+    }
+
+    header .menu{
+        position: fixed;
+        background: rgba(68, 15, 19, 0.88);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        min-width: 400px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 80px 50px;
+        transition: 0.4s ease;
+    }
+
+    header .menu.active{
+        right: 0;
+    }
+
+    header .menu .fa-xmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    header .menu a{
+        display: block;
+        font-size: 16px;
+        margin: 20px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px){
+    .section-main h1{
+        font-size: 32px;
+    }
+}
+
+/* cursor animation */
+.cursor{
+    z-index: 999;
+    position: fixed;
+    background: #2696EB;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #2696EB,
+                0 0 40px #2696EB,
+                0 0 60px #2696EB;
+    animation: colors 5s infinite;
+    transform: (-50%, -50%);
+    display: none;
+}
+
+@keyframes colors{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(100deg);
+    }
+}
+
+.cursor:before{
+    content: "";
+    position: absolute;
+    background: #2696EB;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2%;
+    transform: translate(-30%, 30%);
+    border-radius: 50%;
+}
+
